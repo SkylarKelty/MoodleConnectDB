@@ -16,6 +16,6 @@ class DB {
 	public static function migrate() {
 		global $CFG;
 		\SkylarK\Fizz\FizzConfig::setDB($CFG->dsn, $CFG->user, $CFG->password);
-		unikent\LARS\Connect\Models\Course::migrate();
+		Models\Course::migrate();
 	}
 }
