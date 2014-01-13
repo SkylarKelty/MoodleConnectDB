@@ -13,12 +13,13 @@ namespace unikent\LARS\Connect\Models;
  */
 class Course {
 	public static function migrate() {
-		$table = new \SkylarK\Fizz\Util\FizzMigrate("mdl_course");
+		$table = new \SkylarK\Fizz\Util\FizzMigrate("course_list");
 		$table->addField("id", "bigint(11)");
-		$table->addField("session_code", "varchar(4)");
-		$table->addField("module_delivery_key", "varchar(36)");
-		$table->addField("moodle_key", "varchar(4)");
+		$table->addField("moodle_key", "varchar(24)");
 		$table->addField("moodle_id", "bigint(11)");
+		$table->addField("shortname", "varchar(255)");
+		$table->addField("fullname", "varchar(254)");
+		$table->addField("summary", "longtext", true);
 		$table->setPrimary("id", true);
 		$table->commit();
 	}
