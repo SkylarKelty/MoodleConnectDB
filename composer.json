@@ -1,0 +1,25 @@
+{
+   "name": "unikent/MoodleConnectDB",
+   "description": "Database Management Scripts for New-Connect.",
+   "type": "library",
+   "keywords": [
+      "orm",
+      "database"
+   ],
+   "homepage": "https://github.com/unikent/MoodleConnectDB",
+   "license": "Apache License v2.0",
+   "authors": [{
+      "name": "Skylar Tristan Kelty",
+      "email": "s.kelty@kent.ac.uk",
+      "role": "lead"
+   }],
+   "require": {
+      "php": ">=5.3",
+      "skylarkelty/fizz": "=1.2.3"
+   },
+   "autoload": {
+      "psr-0": {
+         "unikent": ["src/"]
+      }
+   }
+}
