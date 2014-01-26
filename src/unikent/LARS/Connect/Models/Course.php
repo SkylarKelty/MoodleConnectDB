@@ -14,7 +14,7 @@ namespace unikent\LARS\Connect\Models;
 class Course {
 	public static function migrate() {
 		$table = new \SkylarK\Fizz\Util\FizzMigrate("course_list");
-		$table->addField("id", "bigint(11)", true); // TODO - auto increment
+		$table->addField("id", "bigint(11)", true, array("auto_increment"));
 		$table->addField("moodle_env", "varchar(24)");
 		$table->addField("moodle_dist", "varchar(24)");
 		$table->addField("moodle_id", "bigint(11)");
@@ -22,6 +22,9 @@ class Course {
 		$table->addField("fullname", "varchar(254)");
 		$table->addField("summary", "longtext", true);
 		$table->setPrimary("id");
+		$table->setIndex(array("moodle_env", "moodle_dist"));
+		$table->setIndex("moodle_id");
+		$table->setIndex("shortname");
 		$table->commit();
 	}
 }
